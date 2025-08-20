@@ -1,0 +1,56 @@
+const topnavOpen = document.querySelector('#topnavOpen')
+const topnavClose = document.querySelector('#topnavClose')
+const isMobile = window.matchMedia('(width < 50em)');
+const topnavMenu = document.querySelector('#topnavMenu');
+const body = document.querySelector('body');
+const main = document.querySelector('main');
+
+function setupMobileMenu(isMobile){
+	if (isMobile.matches){
+		// is mobile
+		console.log('is mobile');
+		topnavMenu.setAttribute('inert', '');
+		topnavMenu.style.transition = 'none';
+	}
+	else {
+		// is tablet/desktop
+		console.log('is tablet/desktop');
+		closeMobileMenu();
+		topnavMenu.removeAttribute('inert');
+	}
+}
+
+function openMobileMenu(){
+	topnavOpen.setAttribute('aria-expanded', 'true');
+	topnavMenu.removeAttribute('inert'); 
+	topnavMenu.removeAttribute('style');
+	main.setAttribute('inert', ''); 
+	bodyScrollLockUpgrade.disableBodyScroll(body);
+	topnavClose.focus();
+}
+
+function closeMobileMenu(){
+	topnavOpen.setAttribute('aria-expanded', 'false');
+	topnavMenu.setAttribute('inert', ''); //i think there was something in the video about making a separate wrapper for the mobile menu and the fact that we're supposed to be setting inert on it is likely the reason, rn this is setting inert on the nav element as a whole whenever the mobile menu is not open - inert is being set on main when mobile menu IS open, but that should be intended behaviour
+	main.removeAttribute('inert');
+	bodyScrollLockUpgrade.enableBodyScroll(body);
+	topnavOpen.focus();
+
+	setTimeout(() => { //i think this isn't finished because the browser console gives an error that siteTimeout isn't defined. BUT even with this error, it IS functioning to ensure the mobile menu isn't shown when changing breakpoints. oh lol it's just supposed to be a function called "setTimeout" but I'd dictated "siteTimeout"
+		topnavMenu.style.transition = 'none';
+	}, 500);
+}
+
+
+
+
+setupMobileMenu(isMobile);
+
+isMobile.addEventListener('deviceorientation', setupMobileMenu(isMobile));
+
+topnavOpen.addEventListener('click', openMobileMenu);
+topnavClose.addEventListener('click', closeMobileMenu);
+
+isMobile.addEventListener('change', function(e){
+	setupMobileMenu(e); //event fires any time isMobile's breakpoint is crossed; currently not working correctly
+});
