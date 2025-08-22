@@ -4,5 +4,7 @@
 	<meta name="author" content="H. Fenna Buitenwerf">
 	<link rel="stylesheet" href="<?php echo ROOT_PATH?>/styles/normalize.css">
     <link rel="stylesheet" href="<?php echo ROOT_PATH?>/styles/main.css">
-	<script src="https://cdn.jsdelivr.net/gh/rick-liruixin/body-scroll-lock-upgrade@v1.1.0/lib/index.umd.js" async></script>
-	<script src="<?php echo ROOT_PATH?>/scripts/main.js" async></script>
+	<!--<script src="<?php echo ROOT_PATH?>/scripts/main.js" async></script>-->
+	<script src="<?php echo ROOT_PATH?>/scripts/main.js" type="module" async>
+      
+    </script>

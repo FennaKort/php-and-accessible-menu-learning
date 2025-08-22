@@ -1,3 +1,8 @@
+import {
+        clearAllBodyScrollLocks,
+        disableBodyScroll,
+        enableBodyScroll,
+      } from 'https://cdn.jsdelivr.net/gh/rick-liruixin/body-scroll-lock-upgrade@v1.1.0/lib/index.esm.js';
 const topnavOpen = document.querySelector('#topnavOpen')
 const topnavClose = document.querySelector('#topnavClose')
 const isMobile = window.matchMedia('(width < 50em)');
@@ -25,7 +30,7 @@ function openMobileMenu(){
 	topnavMenu.removeAttribute('inert'); 
 	topnavMenu.removeAttribute('style');
 	main.setAttribute('inert', ''); 
-	bodyScrollLockUpgrade.disableBodyScroll(body);
+	disableBodyScroll(body);
 	topnavClose.focus();
 }
 
@@ -35,10 +40,10 @@ function closeMobileMenu(){
 		// not sure that would make a difference because wouldn't setting inert on a wrapper element still cause its content to be inert?
 	// rn this is setting inert on the nav element as a whole whenever the mobile menu is not open - inert is being set on main when mobile menu IS open, which is intended behaviour for mobile menu being open 
 	main.removeAttribute('inert');
-	bodyScrollLockUpgrade.enableBodyScroll(body);
+	enableBodyScroll(body);
 	topnavOpen.focus();
 
-	setTimeout(() => { //i think this isn't finished because the browser console gives an error that siteTimeout isn't defined. BUT even with this error, it IS functioning to ensure the mobile menu isn't shown when changing breakpoints. 
+	setTimeout(() => { // i think this isn't finished because the browser console gives an error that siteTimeout isn't defined. BUT even with this error, it IS functioning to ensure the mobile menu isn't shown when changing breakpoints. 
 	// oh lol it's just supposed to be a function called "setTimeout" but I'd dictated "siteTimeout"
 		topnavMenu.style.transition = 'none';
 	}, 500);
