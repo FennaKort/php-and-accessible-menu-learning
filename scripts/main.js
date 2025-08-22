@@ -25,18 +25,21 @@ function openMobileMenu(){
 	topnavMenu.removeAttribute('inert'); 
 	topnavMenu.removeAttribute('style');
 	main.setAttribute('inert', ''); 
-	bodyScrollLockUpgrade.disableBodyScroll(body);
+	// bodyScrollLockUpgrade.disableBodyScroll(body);
 	topnavClose.focus();
 }
 
 function closeMobileMenu(){
 	topnavOpen.setAttribute('aria-expanded', 'false');
-	topnavMenu.setAttribute('inert', ''); //i think there was something in the video about making a separate wrapper for the mobile menu and the fact that we're supposed to be setting inert on it is likely the reason, rn this is setting inert on the nav element as a whole whenever the mobile menu is not open - inert is being set on main when mobile menu IS open, but that should be intended behaviour
+	topnavMenu.setAttribute('inert', ''); //i think there was something in the video about making a separate wrapper for the mobile menu - maybe the fact that we're supposed to be setting inert on it is likely the reason? 
+		// not sure that would make a difference because wouldn't setting inert on a wrapper element still cause its content to be inert?
+	// rn this is setting inert on the nav element as a whole whenever the mobile menu is not open - inert is being set on main when mobile menu IS open, which is intended behaviour for mobile menu being open 
 	main.removeAttribute('inert');
-	bodyScrollLockUpgrade.enableBodyScroll(body);
+	//bodyScrollLockUpgrade.enableBodyScroll(body);
 	topnavOpen.focus();
 
-	setTimeout(() => { //i think this isn't finished because the browser console gives an error that siteTimeout isn't defined. BUT even with this error, it IS functioning to ensure the mobile menu isn't shown when changing breakpoints. oh lol it's just supposed to be a function called "setTimeout" but I'd dictated "siteTimeout"
+	setTimeout(() => { //i think this isn't finished because the browser console gives an error that siteTimeout isn't defined. BUT even with this error, it IS functioning to ensure the mobile menu isn't shown when changing breakpoints. 
+	// oh lol it's just supposed to be a function called "setTimeout" but I'd dictated "siteTimeout"
 		topnavMenu.style.transition = 'none';
 	}, 500);
 }
@@ -52,5 +55,5 @@ topnavOpen.addEventListener('click', openMobileMenu);
 topnavClose.addEventListener('click', closeMobileMenu);
 
 isMobile.addEventListener('change', function(e){
-	setupMobileMenu(e); //event fires any time isMobile's breakpoint is crossed; currently not working correctly
+	setupMobileMenu(e); //event fires any time isMobile's breakpoint is crossed; currently not working correctly - 21 aug - what did I mean by this lol???
 });
