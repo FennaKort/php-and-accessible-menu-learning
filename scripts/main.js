@@ -14,13 +14,14 @@ function setupMobileMenu(isMobile){
 	if (isMobile.matches){
 		// is mobile
 		console.log('is mobile');
-		topnavMenu.setAttribute('inert', '');
+		closeMobileMenu();
+		// topnavMenu.setAttribute('inert', '');
 		topnavMenu.style.transition = 'none';
 	}
 	else {
 		// is tablet/desktop
 		console.log('is tablet/desktop');
-		closeMobileMenu();
+		// closeMobileMenu();
 		topnavMenu.removeAttribute('inert');
 	}
 }
