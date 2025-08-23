@@ -144,6 +144,7 @@
 	.top-nav-item:hover, #site-name:hover {
 		background-color: var(--dark-primary-90);
 	}
+/*dropdown items*/
 	.dropdown {
 		position: relative;
 	}

@@ -18,11 +18,19 @@
 					<a class="top-nav-item" href="<?php echo ROOT_PATH?>/index.php">Home</a>
 				</li>
 				<li>
-				<a class="top-nav-item" href="<?php echo ROOT_PATH?>/pages/about-us.php">About Us</a>
+					<a class="top-nav-item" href="<?php echo ROOT_PATH?>/pages/about-us.php">About Us</a>
 				</li>
-				<li class="dropdown" role="dialog">
-					<button type="button"  class="top-nav-item dropdown-control" aria-expanded="false" aria-controls="dropdown">Dropdown</button>
-					<ul class="dropdown-content" id="dropdown">
+				<!--make sure to increment number in id's if using more than one dropdown per page-->
+				<li class="dropdown"
+					role="dialog" aria-labelledby="dropdown-button-1">
+					<button type="button" 
+							id="dropdown-button-1" 
+							class="top-nav-item dropdown-control" 
+							aria-expanded="false" 
+							aria-controls="dropdown-1">
+						Dropdown
+					</button>
+					<ul class="dropdown-content" id="dropdown-1"> 
 						<li>
 							<a href="<?php echo ROOT_PATH?>/pages/sample.php" class="top-nav-item dropdown-item">Dropdown Item</a>
 						</li>
