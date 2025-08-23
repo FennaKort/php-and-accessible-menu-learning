@@ -8,7 +8,7 @@
 			<span class="hamburger"></span>
 			<span class="hamburger"></span>
 		</button>
-		<nav id="topnavMenu" aria-label="Main Navigation" role="dialog">
+		<nav id="topnavMenu" aria-label="Main">
 			<button id="topnavClose" class="top-nav-close" aria-label="Close Navigation">
 				<span aria-hidden="true">×</span>
 				  </button>
