@@ -4,9 +4,9 @@
 			<h2>PHP test</h2>
 		</a>
 		<button id="topnavOpen" class="top-nav-open" aria-label="Open Navigation" aria-expanded="false">
-			<span class="hamburger"></span>
-			<span class="hamburger"></span>
-			<span class="hamburger"></span>
+			<span class="hamburger" aria-hidden="true"></span>
+			<span class="hamburger" aria-hidden="true"></span>
+			<span class="hamburger" aria-hidden="true"></span>
 		</button>
 		<nav id="topnavMenu" aria-label="Main">
 			<button id="topnavClose" class="top-nav-close" aria-label="Close Navigation">
