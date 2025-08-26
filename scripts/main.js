@@ -17,16 +17,12 @@ function setupMobileMenu(isMobile){
 		closeMobileMenu();
 		// topnavMenu.setAttribute('inert', '');
 		topnavMenu.style.transition = 'none';
-		topnavMenu.setAttribute('role','dialog');
-		topnavMenu.setAttribute('aria-modal','true');
 	}
 	else {
 		// is tablet/desktop
 		console.log('is tablet/desktop');
 		// closeMobileMenu();
 		topnavMenu.removeAttribute('inert');
-		topnavMenu.removeAttribute('role');
-		topnavMenu.removeAttribute('aria-modal');
 	}
 }
 
