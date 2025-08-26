@@ -131,9 +131,9 @@
 		font-size: 1.5rem; 
 		color: var(--light-primary-100);
 	}
-
+/*nav-items*/
 	.top-nav-item {
-		background-color: var(--dark-primary-100); /*necessary for mobile menu, if open state background is a different colour*/
+		background-color: var(--dark-primary-100); /*necessary for mobile nav, if open state background is a different colour*/
 		border: none;
 		text-align: center;
 		display: block;
@@ -182,7 +182,7 @@
 	  }
 }
 
-/* mobile menu */
+/* mobile nav */
 @media screen and (width < 50em) {
 	header {
 		padding: 0 1.5rem;
@@ -199,7 +199,7 @@
 	header * {
 		font-size: 1.5rem;
 	}
-	.top-nav-open {
+	button.top-nav-open {
 		display: flex;
 		flex-direction: column;
 		justify-content: space-evenly;

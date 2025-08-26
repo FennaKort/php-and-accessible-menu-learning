@@ -1,14 +1,14 @@
-<header id="top-nav">
+<header>
 		<a href="<?php echo ROOT_PATH?>/index.php" id="site-name" class="current-page">
 			<img src="<?php echo ROOT_PATH?>/images/logo-50x50.png" alt="" height="32" width="32">
 			<h2>PHP test</h2>
 		</a>
-		<button id="topnavOpen" class="top-nav-open" aria-label="Open Navigation" aria-expanded="false">
-			<span class="hamburger" aria-hidden="true"></span>
-			<span class="hamburger" aria-hidden="true"></span>
-			<span class="hamburger" aria-hidden="true"></span>
-		</button>
-		<nav id="topnavMenu" aria-label="Main">
+		<nav id="topnav" aria-label="Main">
+			<button id="topnavOpen" class="top-nav-open" aria-label="Open Navigation" aria-expanded="false">
+				<span class="hamburger" aria-hidden="true"></span>
+				<span class="hamburger" aria-hidden="true"></span>
+				<span class="hamburger" aria-hidden="true"></span>
+			</button>
 			<button id="topnavClose" class="top-nav-close" aria-label="Close Navigation">
 				<span aria-hidden="true">×</span>
 				  </button>
