@@ -26,8 +26,7 @@
 					<button type="button" 
 							id="dropdown-button-1" 
 							class="top-nav-item dropdown-control" 
-							aria-expanded="false" 
-							aria-controls="dropdown-1">
+							aria-expanded="false">
 						Dropdown
 					</button>
 					<ul class="dropdown-content" id="dropdown-1"> 
