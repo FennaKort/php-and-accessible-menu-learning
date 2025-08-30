@@ -187,7 +187,7 @@
 	header {
 		padding: 0 1.5rem;
 	}
-	nav {
+	#topnav {
 		height: 100vh;
 		background-color: var(--dark-primary-100);
 		position: fixed;
@@ -213,8 +213,8 @@
 		border: 2px solid var(--secondary-110);
 		width: 80%;
 	}
-	/*translate nav back on screen when .top-nav-open is clicked and js changes aria-expanded to true*/
-	.top-nav-open[aria-expanded="true"] + nav {
+	/*translate mobile navigation area back on screen when .top-nav-open is clicked and js changes aria-expanded to true*/
+	.top-nav-open[aria-expanded="true"] + #topnav {
 		translate: 0;
 	}
 

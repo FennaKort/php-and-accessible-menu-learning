@@ -3,15 +3,15 @@
 			<img src="<?php echo ROOT_PATH?>/images/logo-50x50.png" alt="" height="32" width="32">
 			<h2>PHP test</h2>
 		</a>
-		<nav id="topnav" aria-label="Main">
+		<nav aria-label="Main">
 			<button id="topnavOpen" class="top-nav-open" aria-label="Open Navigation" aria-expanded="false">
 				<span class="hamburger" aria-hidden="true"></span>
 				<span class="hamburger" aria-hidden="true"></span>
 				<span class="hamburger" aria-hidden="true"></span>
 			</button>
+			<div id="topnav">
 			<button id="topnavClose" class="top-nav-close" aria-label="Close Navigation">
 				<span aria-hidden="true">×</span>
-				  </button>
 			</button>
 			<ul id="top-nav-items">
 				<li id="site-name-mobile">
@@ -42,5 +42,6 @@
 				<a class="top-nav-item" href="<?php echo ROOT_PATH?>/pages/contact.php">Contact</a>
 				</li>
 			</ul>
+			</div>
 		</nav>
 	</header> 	
