@@ -36,3 +36,10 @@ Baseline: 16px
 
 //https://www.w3.org/WAI/ARIA/apg/patterns/disclosure/examples/disclosure-navigation/
 //https://www.w3.org/WAI/content-assets/wai-aria-practices/patterns/disclosure/examples/js/disclosureMenu.js
+
+# troubleshooting inert attribute getting set on topnavMenu when on desktop
+
+
+
+
+[] link text in top-nav not appropriate WCAG contrast for menu background
