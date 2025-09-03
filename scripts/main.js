@@ -50,15 +50,15 @@ function closeMobileNav(){
 	}, 500);
 }
 
-
-
-
 setupMobileNav(isMobile);
 
 isMobile.addEventListener('deviceorientation', setupMobileNav(isMobile));
 
-topnavOpen.addEventListener('click', openMobileNav);
-topnavClose.addEventListener('click', closeMobileNav);
+topnavOpen.addEventListener('click', ()=> {
+	topnavOpen.getAttribute('aria-expanded') == 'false' ?
+		topnavOpen.setAttribute('aria-expanded', 'true') :
+		topnavOpen.setAttribute('aria-expanded', 'false')
+})
 
 isMobile.addEventListener('change', function(e){
 	setupMobileNav(e); //event fires any time isMobile's breakpoint is crossed; currently not working correctly - 21 aug - what did I mean by this lol???

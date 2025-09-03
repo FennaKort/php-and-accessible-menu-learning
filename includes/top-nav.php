@@ -4,16 +4,9 @@
 			<h2>PHP test</h2>
 		</a>
 		<nav aria-label="Main">
-			<button id="topnavOpen" class="top-nav-open" aria-label="Open Navigation" aria-expanded="false">
-				<span class="hamburger" aria-hidden="true"></span>
-				<span class="hamburger" aria-hidden="true"></span>
-				<span class="hamburger" aria-hidden="true"></span>
+			<button id="topnavOpen" class="top-nav-open" aria-label="Menu" aria-expanded="false">
 			</button>
-			<div id="topnav">
-			<button id="topnavClose" class="top-nav-close" aria-label="Close Navigation">
-				<span aria-hidden="true">×</span>
-			</button>
-			<ul id="top-nav-items">
+			<ul id="topnav">
 				<li id="site-name-mobile">
 					<a class="top-nav-item" href="<?php echo ROOT_PATH?>/index.php">Home</a>
 				</li>
@@ -42,6 +35,5 @@
 				<a class="top-nav-item" href="<?php echo ROOT_PATH?>/pages/contact.php">Contact</a>
 				</li>
 			</ul>
-			</div>
 		</nav>
 	</header> 	
