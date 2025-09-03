@@ -4,7 +4,7 @@
 			<h2>PHP test</h2>
 		</a>
 		<nav aria-label="Main">
-			<button id="topnavOpen" class="top-nav-open" aria-label="Menu" aria-expanded="false">
+			<button id="topnavOpen" class="top-nav-open" aria-label="Menu" aria-controls="topnav" aria-expanded="false">
 			</button>
 			<ul id="topnav">
 				<li id="site-name-mobile">

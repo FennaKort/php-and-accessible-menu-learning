@@ -4,7 +4,6 @@ import {
         enableBodyScroll,
       } from 'https://cdn.jsdelivr.net/gh/rick-liruixin/body-scroll-lock-upgrade@v1.1.0/lib/index.esm.js';
 const topnavOpen = document.querySelector('#topnavOpen')
-const topnavClose = document.querySelector('#topnavClose')
 const isMobile = window.matchMedia('(width < 50em)');
 const topnav = document.querySelector('#topnav');
 const body = document.querySelector('body');
@@ -32,14 +31,12 @@ function openMobileNav(){
 	topnav.removeAttribute('style');
 	main.setAttribute('inert', ''); 
 	disableBodyScroll(body);
-	topnavClose.focus();
+	topnavOpen.focus();
 }
 
 function closeMobileNav(){
 	topnavOpen.setAttribute('aria-expanded', 'false');
-	topnav.setAttribute('inert', ''); //i think there was something in the video about making a separate wrapper for the mobile Nav - maybe the fact that we're supposed to be setting inert on it is likely the reason? 
-		// not sure that would make a difference because wouldn't setting inert on a wrapper element still cause its content to be inert?
-	// rn this is setting inert on the nav element as a whole whenever the mobile Nav is not open - inert is being set on main when mobile Nav IS open, which is intended behaviour for mobile Nav being open 
+	topnav.setAttribute('inert', '');
 	main.removeAttribute('inert');
 	enableBodyScroll(body);
 	topnavOpen.focus();
@@ -50,16 +47,19 @@ function closeMobileNav(){
 	}, 500);
 }
 
-setupMobileNav(isMobile);
+setupMobileNav(isMobile); //checks to determine whether it is necessary to set up the mobile nav based on viewport width
 
-isMobile.addEventListener('deviceorientation', setupMobileNav(isMobile));
-
-topnavOpen.addEventListener('click', ()=> {
-	topnavOpen.getAttribute('aria-expanded') == 'false' ?
-		topnavOpen.setAttribute('aria-expanded', 'true') :
-		topnavOpen.setAttribute('aria-expanded', 'false')
-})
+isMobile.addEventListener('deviceorientation', setupMobileNav(isMobile)); //rechecks when device orientation changes
 
 isMobile.addEventListener('change', function(e){
-	setupMobileNav(e); //event fires any time isMobile's breakpoint is crossed; currently not working correctly - 21 aug - what did I mean by this lol???
-});
+	setupMobileNav(e); //rechecks when device viewport width changes
+}); 
+
+topnavOpen.addEventListener('click', 
+	()=> {
+	let navState = topnavOpen.getAttribute('aria-expanded')
+	if (navState === 'false')
+		openMobileNav()
+	else
+		closeMobileNav()
+})
