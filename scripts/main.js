@@ -13,14 +13,12 @@ function setupMobileNav(isMobile){
 	if (isMobile.matches){
 		// is mobile
 		console.log('is mobile');
-		closeMobileNav();
-		// topnav.setAttribute('inert', '');
-		topnav.style.transition = 'none';
+		topnav.setAttribute('inert', '');
+		topnav.style.transition = 'none'; //necessary to ensure mobile nav panel doesn't appear when crossing breakpoints
 	}
 	else {
 		// is tablet/desktop
 		console.log('is tablet/desktop');
-		// closeMobileNav();
 		topnav.removeAttribute('inert');
 	}
 }
@@ -28,7 +26,7 @@ function setupMobileNav(isMobile){
 function openMobileNav(){
 	topnavOpen.setAttribute('aria-expanded', 'true');
 	topnav.removeAttribute('inert'); 
-	topnav.removeAttribute('style');
+	topnav.removeAttribute('style'); //removes transition=none so transition works on open/close
 	main.setAttribute('inert', ''); 
 	disableBodyScroll(body);
 	topnavOpen.focus();
@@ -40,9 +38,7 @@ function closeMobileNav(){
 	main.removeAttribute('inert');
 	enableBodyScroll(body);
 	topnavOpen.focus();
-
-	setTimeout(() => { // i think this isn't finished because the browser console gives an error that siteTimeout isn't defined. BUT even with this error, it IS functioning to ensure the mobile Nav isn't shown when changing breakpoints. 
-	// oh lol it's just supposed to be a function called "setTimeout" but I'd dictated "siteTimeout"
+	setTimeout(() => { //resets transition=none after 0.5s delay: allows close transition to run, then disallows transition again to ensure mobile nav panel doesn't show when crossing breakpoints
 		topnav.style.transition = 'none';
 	}, 500);
 }
